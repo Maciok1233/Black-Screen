@@ -46,6 +46,10 @@ font-size:35px;
 font-family:sans-serif;
 }
 
+.UPPERCASE {
+text-transform:uppercase;
+}
+
 nav{
 width:68%;
 float:right;
