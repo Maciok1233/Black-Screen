@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>⬛Black Screen⬛ - Controls</title>
+<link rel="icon" type="image/x-icon" href="black square.jpg">
 <link rel="stylesheet" type="text/css" href="edit.css">
 </head>
 <body>
@@ -36,5 +37,37 @@
 </ul>
 </div>
 <a href="index.html" accesskey="h"></a>
+<script>
+function toggleFullScreen() {
+  const doc = window.document;
+  const docEl = doc.documentElement;
+
+  var requestFullScreen =
+    docEl.requestFullscreen ||
+    docEl.mozRequestFullScreen ||
+    docEl.webkitRequestFullScreen ||
+    docEl.msRequestFullscreen;
+  var cancelFullScreen =
+    doc.exitFullscreen ||
+    doc.mozCancelFullScreen ||
+    doc.webkitExitFullscreen ||
+    doc.msExitFullscreen;
+
+  if (
+    !doc.fullscreenElement &&
+    !doc.mozFullScreenElement &&
+    !doc.webkitFullscreenElement &&
+    !doc.msFullscreenElement
+  ) {
+    requestFullScreen.call(docEl);
+  } else {
+    cancelFullScreen.call(doc);
+  }
+}
+
+document.addEventListener("dblclick", () => {
+  toggleFullScreen();
+});
+</script>
 </body>
 </html>
