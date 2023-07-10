@@ -30,44 +30,12 @@
 <h1>
 <font color="#04AA6D">
 <p>Alt + h - Home</p>
-<p>🖱x2 - Full Screen</p>
-<p>🖱x2 - Leave Full Screen</p>
+<p>🖱x2 - Full Screen (works only after start button clicked)</p>
+<p>🖱x2 - Leave Full Screen (works only after start button clicked)</p>
 </font>
 </h1>
 </ul>
 </div>
 <a href="index.html" accesskey="h"></a>
-<script>
-function toggleFullScreen() {
-  const doc = window.document;
-  const docEl = doc.documentElement;
-
-  var requestFullScreen =
-    docEl.requestFullscreen ||
-    docEl.mozRequestFullScreen ||
-    docEl.webkitRequestFullScreen ||
-    docEl.msRequestFullscreen;
-  var cancelFullScreen =
-    doc.exitFullscreen ||
-    doc.mozCancelFullScreen ||
-    doc.webkitExitFullscreen ||
-    doc.msExitFullscreen;
-
-  if (
-    !doc.fullscreenElement &&
-    !doc.mozFullScreenElement &&
-    !doc.webkitFullscreenElement &&
-    !doc.msFullscreenElement
-  ) {
-    requestFullScreen.call(docEl);
-  } else {
-    cancelFullScreen.call(doc);
-  }
-}
-
-document.addEventListener("dblclick", () => {
-  toggleFullScreen();
-});
-</script>
 </body>
 </html>
